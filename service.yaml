@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: griffincollege-spring-petclinic
+    chart: griffincollege-spring-petclinic-0.0.1
+    heritage: Tiller
+    release: griffincollege-spring-petclinic
+  name: griffincollege-spring-petclinic
+  namespace: __PROJECT__
+spec:
+  type: "ClusterIP"
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: griffincollege-spring-petclinic
+    release: griffincollege-spring-petclinic

@@ -1,0 +1,42 @@
+---
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: griffincollege-spring-petclinic
+    chart: griffincollege-spring-petclinic-0.0.1
+    heritage: Tiller
+    release: griffincollege-spring-petclinic
+  name: griffincollege-spring-petclinic
+  namespace: __PROJECT__
+spec:
+  replicas: 1
+  selector:
+    deploymentconfig: griffincollege-spring-petclinic
+  template:
+    metadata:
+      labels:
+        app: griffincollege-spring-petclinic
+        release: griffincollege-spring-petclinic
+        deploymentconfig: griffincollege-spring-petclinic
+    spec:
+      imagePullSecrets:
+      - name: docker-registry-credentials
+      containers:
+        - name: griffincollege-spring-petclinic
+          image: "__IMAGE_TAG__"
+          imagePullPolicy: "Always"
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+              port: http
+            initialDelaySeconds: 600
+            timeoutSeconds: 60
+          readinessProbe:
+            tcpSocket:
+              port: http
+          resources:
+            {}
