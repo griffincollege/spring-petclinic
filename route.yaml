@@ -10,7 +10,7 @@ metadata:
   name: griffincollege-spring-petclinic
   namespace: __PROJECT__
 spec:
-  host: griffincollege-spring-petclinic-__PROJECT__.apps.jenkins-test.perspectatechdemos.com
+  host: griffincollege-spring-petclinic-__PROJECT__.apps.technical-review.perspectatechdemos.com
   port:
     targetPort: http
   subdomain: ""
