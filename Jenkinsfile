@@ -83,14 +83,13 @@ spec:
     MANAGEMENT_NAMESPACE = "mgt"
     GITHUB_GROUP = "griffincollege"
     GITHUB_PROJECT = "spring-petclinic"
-    SONARQUBE_TOKEN = "9c4398db4191754fb63d6f1b59fd887105e22ea4"
     DEVCLOUD_REGISTRY_ADDRESS = "docker-nexus-mgt-jenkins-test.perspectatechdemos.com"
     APPLICATION_MAJOR_VERSION = "1"
     APPLICATION_MINOR_VERSION = "0"
     DEVCLOUD_DOCKER_TAG = "${DEVCLOUD_REGISTRY_ADDRESS}/${GITHUB_PROJECT}:${APPLICATION_MAJOR_VERSION}.${APPLICATION_MINOR_VERSION}.${env.BUILD_NUMBER}"
     DEVCLOUD_BRANCH_TAG = "master"
     MATTERMOST_CHANNEL = "griffincollege-spring-petclinic"
-    MATTERMOST_WEBHOOK = "https://mattermost-mgt-jenkins-test.perspectatechdemos.com/hooks/cg6p3tztcpdbdd4rfchzb1gbgc"
+    MATTERMOST_WEBHOOK = "https://mattermost-mgt-jenkins-test.perspectatechdemos.com/hooks/o3g5g7g89ffuzgqs3bo8omo4wy"
     ARTIFACTORY_URL = "https://artifactory-mgt-jenkins-test.perspectatechdemos.com"
     SONARQUBE_URL = "https://sonarqube-mgt-jenkins-test.perspectatechdemos.com"
     GITHUB_URL = "https://github.com"
@@ -136,11 +135,7 @@ spec:
         container('maven') {
           dir('.') {
             withSonarQubeEnv('sonarqube') { 
-            sh "mvn compile && mvn sonar:sonar \
-            -Dsonar.projectKey=${GITHUB_GROUP}-${GITHUB_PROJECT} \
-            -Dsonar.host.url=${SONARQUBE_URL} \
-            -Dsonar.scm.provider=git \
-            -Dsonar.login=${SONARQUBE_TOKEN}"
+            sh "mvn compile && mvn sonar:sonar -Dsonar.projectKey=${GITHUB_GROUP}-${GITHUB_PROJECT}"
             }
           }
         }
