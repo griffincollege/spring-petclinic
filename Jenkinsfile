@@ -95,7 +95,7 @@ spec:
     GITHUB_URL = "https://github.com"
     // we set this for now as there is some weirdness related to BUILD_URL env variable
     // definitely not best practice
-    BUILD_URL = "https://jenkins-mgt-jenkins-test-2.perspectatechdemos.com/job/${JOB_BASE_NAME}/job/${JOB_NAME}/job/${BRANCH_NAME}/${BUILD_NUMBER}"
+    BUILD_URL = "https://jenkins-mgt-jenkins-test-2.perspectatechdemos.com/job/griffincollege/job/spring-petclinic/job/${BRANCH_NAME}/${BUILD_NUMBER}"
     DEV_DEPLOYMENT_URL = "http://griffincollege-spring-petclinic-dev.apps.jenkins-test-2.perspectatechdemos.com"
     TEST_DEPLOYMENT_URL = "http://griffincollege-spring-petclinic-test.apps.jenkins-test-2.perspectatechdemos.com"
     PROD_DEPLOYMENT_URL = "http://griffincollege-spring-petclinic-prod.apps.jenkins-test-2.perspectatechdemos.com"
