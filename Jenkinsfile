@@ -89,7 +89,7 @@ spec:
     DEVCLOUD_DOCKER_TAG = "${DEVCLOUD_REGISTRY_ADDRESS}/${GITHUB_PROJECT}:${APPLICATION_MAJOR_VERSION}.${APPLICATION_MINOR_VERSION}.${env.BUILD_NUMBER}"
     DEVCLOUD_BRANCH_TAG = "master"
     MATTERMOST_CHANNEL = "griffincollege-spring-petclinic"
-    MATTERMOST_WEBHOOK = "https://mattermost-mgt-technical-review.perspectatechdemos.com/hooks/y3aws9x3p7yqpfa7ckxkijcbsr"
+    MATTERMOST_WEBHOOK = "https://mattermost-mgt-technical-review.perspectatechdemos.com/hooks/cnq919rfo7ds9by64r6h6s8mko"
     ARTIFACTORY_URL = "https://artifactory-mgt-technical-review.perspectatechdemos.com"
     SONARQUBE_URL = "https://sonarqube-mgt-technical-review.perspectatechdemos.com"
     GITHUB_URL = "https://github.com"
